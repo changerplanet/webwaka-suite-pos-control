@@ -2,11 +2,47 @@
   "moduleId": "webwaka_suite_pos_control",
   "class": "suite",
   "version": "0.1.0",
-  "capabilities": [],
+  "capabilities": [
+    "pos:sale.create",
+    "pos:sale.view",
+    "pos:sale.refund",
+    "pos:sale.void",
+    "pos:shift.open",
+    "pos:shift.close",
+    "pos:shift.view",
+    "pos:inventory.view",
+    "pos:inventory.adjust",
+    "pos:reports.view",
+    "pos:reports.export",
+    "pos:settings.view",
+    "pos:settings.manage"
+  ],
+  "entitlements": [
+    "pos-access",
+    "pos-cashier",
+    "pos-supervisor",
+    "pos-offline-enabled",
+    "pos-multi-location",
+    "pos-advanced-reports",
+    "pos-inventory-management",
+    "pos-admin"
+  ],
+  "featureFlags": [
+    "pos-enabled",
+    "pos-offline-sales",
+    "pos-cash-rounding",
+    "pos-nigeria-vat",
+    "pos-quick-sale",
+    "pos-barcode-scanning",
+    "pos-receipt-printing",
+    "pos-split-payments",
+    "pos-customer-display",
+    "pos-inventory-alerts"
+  ],
   "dependencies": [],
   "metadata": {
     "repository": "https://github.com/changerplanet/webwaka-suite-pos-control",
     "created": "2026-01-20",
-    "status": "substrate"
+    "status": "implemented"
   }
 }

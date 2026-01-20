@@ -1,0 +1,203 @@
+
+WebWaka Suite POS — Control Layer (Headless, No UI)
+
+⸻
+
+CONTEXT
+
+You are operating as Replit AI on behalf of the WebWaka Modular Rebuild.
+
+This task is governed by the WebWaka Ecosystem Constitution (v1.6) and all prior ratified amendments.
+
+This is a STRICT IMPLEMENTATION TASK.
+
+⸻
+
+🔒 NON-NEGOTIABLE PRE-CHECK (MANDATORY)
+
+STEP 0 — REPOSITORY VERIFICATION (HARD REQUIREMENT)
+
+Before writing any code, you MUST:
+	1.	Clone the GitHub repository:
+
+https://github.com/changerplanet/webwaka-suite-pos-control
+
+	2.	Verify ALL of the following:
+	•	Repo exists
+	•	Default branch = main
+	•	Mandatory governance files are present
+	•	CI passes in current state
+
+❌ If the repo does NOT exist
+❌ If cloning fails
+❌ If governance files are missing
+
+➡️ STOP IMMEDIATELY
+➡️ Respond with:
+
+“BLOCKED: Required repository substrate is missing or incomplete.”
+
+⚠️ You are NOT allowed to create repos, rename repos, or improvise structure.
+
+⸻
+
+🎯 PHASE 5A OBJECTIVE
+
+Implement the POS Suite Control Layer as a pure, headless, deterministic library.
+
+This module defines:
+	•	POS-specific capabilities
+	•	POS-specific entitlements
+	•	POS-specific feature flags
+	•	POS-specific dashboard sections (declarative only)
+
+It does NOT implement:
+	•	UI
+	•	POS runtime logic
+	•	Payments
+	•	Inventory mutations
+	•	Pricing calculations
+
+⸻
+
+📦 MODULE SCOPE (STRICT)
+
+YOU MUST IMPLEMENT:
+
+1. POS Capability Definitions
+Examples (non-exhaustive):
+	•	pos:sale.create
+	•	pos:sale.refund
+	•	pos:shift.open
+	•	pos:shift.close
+	•	pos:inventory.view
+	•	pos:reports.view
+
+Capabilities must:
+	•	Be declarative
+	•	Be registered in module.manifest.json
+	•	Be documented in module.contract.md
+
+⸻
+
+2. POS Entitlement Definitions
+Examples:
+	•	pos-access
+	•	pos-offline-enabled
+	•	pos-multi-location
+	•	pos-advanced-reports
+
+Rules:
+	•	No evaluation logic
+	•	No pricing logic
+	•	Definitions only
+	•	Designed to be consumed by Core Entitlements
+
+⸻
+
+3. POS Feature Flags
+Examples:
+	•	pos-enabled
+	•	pos-offline-sales
+	•	pos-cash-rounding
+	•	pos-nigeria-vat
+
+Rules:
+	•	Flags are data only
+	•	No experimentation logic
+	•	Compatible with Core Feature Flags engine
+
+⸻
+
+4. POS Dashboard Declaration (Consumer of Phase 4A)
+Define a POS Tenant Dashboard Declaration:
+	•	Sections (Sales, Shifts, Inventory, Reports, Settings)
+	•	Each section gated by:
+	•	Permissions
+	•	Entitlements
+	•	Feature flags
+
+⚠️ ALL visibility resolution MUST be delegated to Phase 4A Dashboard Control Engine
+
+⸻
+
+🧠 ARCHITECTURAL LAWS (DO NOT VIOLATE)
+
+You MUST respect:
+	•	❌ No business logic
+	•	❌ No role checks
+	•	❌ No direct permission evaluation
+	•	❌ No UI rendering
+	•	❌ No environment access
+
+You MUST ensure:
+	•	✅ Determinism (same input → same output)
+	•	✅ Tenant isolation
+	•	✅ Pure data declarations
+	•	✅ JSON-serializable structures
+	•	✅ Snapshot compatibility
+
+⸻
+
+🧪 TESTING REQUIREMENTS
+
+You MUST implement tests that prove:
+	1.	Capabilities are correctly declared
+	2.	Entitlements are defined without logic
+	3.	Feature flags are evaluable via Core engine
+	4.	Dashboard declaration:
+	•	Hides sections when permissions missing
+	•	Hides sections when entitlements missing
+	•	Hides sections when feature flags disabled
+	5.	Determinism:
+	•	10× repeated evaluations → identical output
+
+Coverage target:
+	•	≥ 80% statements
+
+⸻
+
+📄 REQUIRED FILES (MINIMUM)
+
+You MUST update or create:
+	•	src/capabilities.ts
+	•	src/entitlements.ts
+	•	src/featureFlags.ts
+	•	src/dashboard/pos.dashboard.ts
+	•	module.manifest.json
+	•	module.contract.md
+	•	__tests__/*
+
+⸻
+
+🚫 EXPLICIT EXCLUSIONS
+
+You are NOT allowed to implement:
+	•	POS UI
+	•	POS runtime flows
+	•	Payment logic
+	•	Inventory mutation
+	•	Ledger writes
+	•	Offline sync engines
+
+⸻
+
+📦 REQUIRED FINAL DELIVERABLE
+
+Respond with a Phase 5A Completion Report containing:
+	1.	List of capabilities defined
+	2.	List of entitlements defined
+	3.	List of feature flags defined
+	4.	Dashboard sections + gating matrix
+	5.	Test summary + coverage %
+	6.	Final commit SHA on main
+
+⸻
+
+⛔ HARD STOP
+
+After submitting the completion report:
+
+⛔ STOP
+⛔ Do NOT proceed to Phase 5B
+⛔ Await explicit authorization
