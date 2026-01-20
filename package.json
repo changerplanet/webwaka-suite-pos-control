@@ -1,0 +1,14 @@
+{
+  "name": "webwaka-suite-pos-control",
+  "version": "0.1.0",
+  "description": "WebWaka suite module",
+  "scripts": {
+    "test": "echo 'No tests yet' && exit 0"
+  },
+  "keywords": [
+    "webwaka",
+    "suite",
+    "modular"
+  ],
+  "license": "UNLICENSED"
+}
